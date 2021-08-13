@@ -58,7 +58,12 @@ Examples:
 
 */
 function addKeyAndValue(arr,key,value){
-    
+    let result=[];
+    for (let i=0;i<arr.length;i++){
+        arr[i][`${key}`]=value;
+        result.push(arr[i])
+    }
+    return result
 }
 
 /*

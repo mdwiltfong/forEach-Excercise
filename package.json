@@ -1,0 +1,22 @@
+{
+  "name": "foreach-excercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "foreach-map-filter.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdwiltfong/forEach-Excercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdwiltfong/forEach-Excercise/issues"
+  },
+  "homepage": "https://github.com/mdwiltfong/forEach-Excercise#readme",
+  "dependencies": {
+    "jasmine": "^3.8.0"
+  }
+}

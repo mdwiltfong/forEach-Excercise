@@ -221,7 +221,7 @@ Examples:
 function findInObj(arr, key, searchValue) {
     let result = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i][`${key}`] === true) {
+        if (arr[i][`${key}`] === searchValue) {
             result.push(arr[i])
         }
     }

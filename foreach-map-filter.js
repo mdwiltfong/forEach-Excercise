@@ -77,16 +77,46 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   let str=str.toLowerCase();
-   let vowels=[a,e,i,o,u];
+    let string=str.toLowerCase();
+    let vowels=['a','e','i','o','u'];
+    let strVowels=[];
+   let strVowelsNoRep=[];
    let result={};
-   str.filter((letter)=>{
-        vowels.includes(letter);
-        result.push(letter);
+   for(let i=0;i<str.length;i++){
+     if(vowels.includes(string[i])){
+       strVowels.push(string[i])
+     }
+   }
+   
+   for(let i=0;i<strVowels.length;i++){
+     if(!strVowelsNoRep.includes(strVowels[i])){
+       strVowelsNoRep.push(strVowels[i]);
+     }
+   }
+   
+   strVowelsNoRep.forEach((letter)=>{
+     result[`${letter}`]=" "
    })
-
-
-}
+   let j=0;
+  while (j<strVowelsNoRep.length){
+    let count=0;
+    for (let i =0;i<strVowels.length;i++){
+      if(strVowels[i]===strVowelsNoRep[j]){
+        count++
+      }
+    }
+    result[`${strVowelsNoRep[j]}`]=count;
+    j++;
+  }
+   
+   
+ console.log(strVowelsNoRep)
+ console.log(strVowels)
+   
+   return result
+ 
+ }
+ 
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled

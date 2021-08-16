@@ -6,12 +6,12 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 
 */
-function doubleValues(arr){
-    let result=[] ;
-    arr.forEach((i)=>{
-        result.push(i*2);
-     })
-     return result;
+function doubleValues(arr) {
+    let result = [];
+    arr.forEach((i) => {
+        result.push(i * 2);
+    })
+    return result;
 }
 
 /*
@@ -22,9 +22,9 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
-function onlyEvenValues(arr){
-    let result=arr.filter((num)=>{
-        if(num%2 == 0){
+function onlyEvenValues(arr) {
+    let result = arr.filter((num) => {
+        if (num % 2 == 0) {
             return num
         }
     })
@@ -39,10 +39,10 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
-function showFirstAndLast(arr){
-    let result=[];
-    arr.forEach((word)=>{
-        let x=word.length;
+function showFirstAndLast(arr) {
+    let result = [];
+    arr.forEach((word) => {
+        let x = word.length;
         result.push(`${word[0]+word[x-1]}`)
     })
     return result
@@ -57,10 +57,10 @@ Examples:
     // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
 
 */
-function addKeyAndValue(arr,key,value){
-    let result=[];
-    for (let i=0;i<arr.length;i++){
-        arr[i][`${key}`]=value;
+function addKeyAndValue(arr, key, value) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        arr[i][`${key}`] = value;
         result.push(arr[i])
     }
     return result
@@ -76,47 +76,47 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
-function vowelCount(str){
-    let string=str.toLowerCase();
-    let vowels=['a','e','i','o','u'];
-    let strVowels=[];
-   let strVowelsNoRep=[];
-   let result={};
-   for(let i=0;i<str.length;i++){
-     if(vowels.includes(string[i])){
-       strVowels.push(string[i])
-     }
-   }
-   
-   for(let i=0;i<strVowels.length;i++){
-     if(!strVowelsNoRep.includes(strVowels[i])){
-       strVowelsNoRep.push(strVowels[i]);
-     }
-   }
-   
-   strVowelsNoRep.forEach((letter)=>{
-     result[`${letter}`]=" "
-   })
-   let j=0;
-  while (j<strVowelsNoRep.length){
-    let count=0;
-    for (let i =0;i<strVowels.length;i++){
-      if(strVowels[i]===strVowelsNoRep[j]){
-        count++
-      }
+function vowelCount(str) {
+    let string = str.toLowerCase();
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let strVowels = [];
+    let strVowelsNoRep = [];
+    let result = {};
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(string[i])) {
+            strVowels.push(string[i])
+        }
     }
-    result[`${strVowelsNoRep[j]}`]=count;
-    j++;
-  }
-   
-   
- console.log(strVowelsNoRep)
- console.log(strVowels)
-   
-   return result
- 
- }
- 
+
+    for (let i = 0; i < strVowels.length; i++) {
+        if (!strVowelsNoRep.includes(strVowels[i])) {
+            strVowelsNoRep.push(strVowels[i]);
+        }
+    }
+
+    strVowelsNoRep.forEach((letter) => {
+        result[`${letter}`] = " "
+    })
+    let j = 0;
+    while (j < strVowelsNoRep.length) {
+        let count = 0;
+        for (let i = 0; i < strVowels.length; i++) {
+            if (strVowels[i] === strVowelsNoRep[j]) {
+                count++
+            }
+        }
+        result[`${strVowelsNoRep[j]}`] = count;
+        j++;
+    }
+
+
+    console.log(strVowelsNoRep)
+    console.log(strVowels)
+
+    return result
+
+}
+
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
@@ -127,9 +127,9 @@ Examples:
 */
 
 function doubleValuesWithMap(arr) {
-    let result=arr.map(x=>x*2)
-  
-  return result
+    let result = arr.map(x => x * 2)
+
+    return result
 }
 
 /*
@@ -140,9 +140,9 @@ Examples:
     valTimesIndex([1,-2,-3]) // [0,-2,-6]
 */
 
-function valTimesIndex(arr){
-    let result=arr.map((x,i)=>{
-       return x*i
+function valTimesIndex(arr) {
+    let result = arr.map((x, i) => {
+        return x * i
     })
     return result
 }
@@ -154,8 +154,8 @@ Examples:
     extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractKey(arr, key){
-    let result=arr.map((i)=>{
+function extractKey(arr, key) {
+    let result = arr.map((i) => {
         return i[`${key}`];
     })
 
@@ -169,9 +169,9 @@ Examples:
     extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
 
-function extractFullName(arr){
-    let result=arr.map((i)=>{
-        return i[`first`]+' '+i[`last`]
+function extractFullName(arr) {
+    let result = arr.map((i) => {
+        return i[`first`] + ' ' + i[`last`]
     })
 
     return result
@@ -187,12 +187,12 @@ Examples:
 */
 
 function filterByValue(arr, key) {
-    let output=arr.filter((element)=>{
-      return element[`${key}`] 
+    let output = arr.filter((element) => {
+        return element[`${key}`]
     })
-    
+
     return output
-    }
+}
 
 /*
 Write a function called find which accepts an array and 
@@ -205,7 +205,7 @@ Examples:
 */
 
 function find(arr, searchValue) {
-    let result=arr.find(element=> element==searchValue);
+    let result = arr.find(element => element == searchValue);
     return result
 }
 
@@ -219,13 +219,13 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-let result=[];
-    for (let i=0;i<arr.length;i++){
- if(arr[i][`${key}`] === true){
-    result.push(arr[i])
- }
-}
-return result[0]
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][`${key}`] === true) {
+            result.push(arr[i])
+        }
+    }
+    return result[0]
 
 }
 
@@ -238,7 +238,19 @@ Examples:
     removeVowels('ZZZZZZ') // ('zzzzzz')
 */
 
-function removeVowels(str) {}
+function removeVowels(str) {
+    let string = str.toLowerCase();
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let result = "";
+    let j = 0;
+    for (let i = 0; i < string.length; i++) {
+      if (!vowels.includes(string[i])) {
+            result += `${string[i]}`   
+        }
+      j++;
+    }
+    return result
+}
 
 /*
 Write a function called doubleOddNumbers which accepts an array and returns a new array with all of the odd numbers doubled (HINT - you can use map and filter to double and then filter the odd numbers).
@@ -248,4 +260,11 @@ Examples:
     doubleOddNumbers([4,4,4,4,4]) // []
 */
 
-function doubleOddNumbers(arr) {}
+function doubleOddNumbers(arr) {
+    return arr.filter(function(val) {
+      return val % 2 !== 0;
+    })
+    .map(function(val) {
+      return val * 2;
+    });
+}

@@ -170,17 +170,29 @@ Examples:
 */
 
 function extractFullName(arr){
-    
+    let result=arr.map((i)=>{
+        return i[`first`]+' '+i[`last`]
+    })
+
+    return result
 }
 
 /*
 Write a function called filterByValue which accepts an array of objects and a key and returns a new array with all the objects that contain that key.
 
 Examples:
-    filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner') // [{first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Colt', last:"Steele", isCatOwner: true}]
+    filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner') // 
+    
+    [{first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Colt', last:"Steele", isCatOwner: true}]
 */
 
-function filterByValue(arr, key) {}
+function filterByValue(arr, key) {
+    let output=arr.filter((element)=>{
+      return element[`${key}`] 
+    })
+    
+    return output
+    }
 
 /*
 Write a function called find which accepts an array and a value and returns the first element in the array that has the same value as the second parameter or undefined if the value is not found in the array.
